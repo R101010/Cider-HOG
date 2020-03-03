@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-// The factSchema is used to embedded docs in as student doc.
+
+// The factSchema is used to embedded docs in as tudent doc.
 // There is no model and no 'facts' collection
 var factSchema = new mongoose.Schema({
   text: String
@@ -7,16 +8,18 @@ var factSchema = new mongoose.Schema({
   timestamps: true
 });
 
-var ciderSchema = new mongoose.Schema({
+var cidersSchema = new mongoose.Schema({
   name: String,
   source: String,
   price: String,
-  purchase date: String,
-  exp. date: String,
-  Organic: String,
+  purchase: String,
+  expiration: String,
+  size: String,
+  organic: String,
+  facts: [factSchema],
   googleId: String
 }, {
   timestamps: true
 });
 
-module.exports = mongoose.model('Cider', ciderSchema);
+module.exports = mongoose.model('Cider', studentSchema);
