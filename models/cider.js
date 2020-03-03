@@ -1,25 +1,41 @@
 var mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-// The factSchema is used to embedded docs in as tudent doc.
-// There is no model and no 'facts' collection
-var factSchema = new mongoose.Schema({
-  text: String
+
+const reviewSchema = new Schema({
+  content: String,
+  rating: {
+    type: Number,
+    min: 1,
+    max: 5,
+    default: 3
+  }
 }, {
   timestamps: true
 });
 
-var cidersSchema = new mongoose.Schema({
-  name: String,
+var ciderSchema = new mongoose.Schema({
+  brewName: {
+    type: String,
+    required: true
+  },
+  name: {
+    type: String,
+    required: true
+  },
   source: String,
-  price: String,
-  purchase: String,
-  expiration: String,
-  size: String,
-  organic: String,
-  facts: [factSchema],
-  googleId: String
+  price: Number,
+  purchase: Date,
+  expiration: Date,
+  size: Number,
+  organic: { type: Boolean, default: false },
+  reviews: [reviewSchema],
+  yeast: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Yeast'
+  }]
 }, {
   timestamps: true
 });
 
-module.exports = mongoose.model('Cider', studentSchema);
+module.exports = mongoose.model('Cider', ciderSchema);
