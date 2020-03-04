@@ -1,4 +1,4 @@
-const Cider = require('../models/ciders');
+var Cider = require('../models/ciders');
 
 module.exports = {
   index,
