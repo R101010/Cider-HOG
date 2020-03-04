@@ -10,15 +10,15 @@ module.exports = {
 
 function index(req, res) {
   Cider.find({}, function(err, ciders) {
-    res.render('ciders/index', {title: 'All Ciders', ciders});
+    res.render('ciders/index', {title: 'All Ciders', ciders });
   });
 }
 
 
 function show(req, res) {
   Cider.findById(req.params.id)
-  .populate('yeast').exec(function(err, cider) {
-    Yeast.find({_id: {$nin: cider.yeast}}, function(err, yeasts) {
+  .populate('brew').exec(function(err, cider) {
+    Yeast.find({_id: {$nin: cider.brew}}, function(err, yeasts) {
       res.render('ciders/show', {
         title: 'Hard Cider Detail',
         cider,
@@ -37,7 +37,7 @@ function create(req, res) {
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key];
   }
-  const cider = new cider(req.body);
+  const cider = new Cider(req.body);
   cider.save(function(err) {
     if (err) return res.redirect('/ciders/new');
     res.redirect(`/ciders/${cider._id}`);

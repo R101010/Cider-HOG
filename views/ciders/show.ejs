@@ -1,0 +1,74 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Title: </div>
+  <div><%= cider.brewName %></div>
+  <div>Birth Day: </div>
+  <div><%= cider.bDate %></div>
+  <div>Organic: </div>
+  <div><%= cider.organic ? 'Yes' : 'No' %></div>
+
+  <div>Brew:</div>
+  <ul>
+    <%- cider.brew.map(p => 
+      `<li>${p.name} <small>${p.bDate.toLocaleDateString()}</small></li>`
+    ).join('') %>
+  </ul>
+</section>
+
+<form id="add-per-to-brew" action="/ciders/<%= cider._id%>/yeasts" method="POST">
+  <select name="yeastId">
+    <%- yeasts.map(p => 
+      `<option value="${p._id}">${p.name}</option>`
+    ).join('') %>
+  </select>
+  <button type="submit">Add to Brew</button>
+</form>
+
+<br><br>
+<h2>Reviews</h2>
+<form id="add-review-form" method="POST" action="/ciders/<%= cider._id %>/reviews">
+  <label>Review:</label>
+  <textarea name="content"></textarea>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <input type="submit" value="Add Review">
+</form>
+
+<% if (cider.reviews.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Review</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let total = 0 %>
+      <% cider.reviews.forEach(function(r) { %>
+        <% total += r.rating %>
+        <tr>
+          <td><%= r.createdAt.toLocaleDateString() %></td>
+          <td><%= r.content %></td>
+          <td><%= r.rating %></td>
+        </tr>
+      <% }); %>
+      <tr>
+        <td colspan="2"></td>
+        <td><strong><%= (total / cider.reviews.length).toFixed(1) %></strong></td>
+      </tr>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Reviews Yet</h5>
+<% } %>
+
+
+<%- include('../partials/footer') %>

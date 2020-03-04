@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+<p>Make sure you haven't already added the yeast strain
+  <select>
+    <% yeasts.forEach(function(p) { %>
+      <option><%= p.name %></option>
+    <% }) %>
+  </select>
+</p>
+<form id="add-yeast-form" action="/yeasts" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name">
+  <label>Born:</label>
+  <input type="bDate" name="born">
+  <input type="submit" value="Add Yeast">
+</form>
+<%- include('../partials/footer') %>

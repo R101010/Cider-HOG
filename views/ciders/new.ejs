@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/ciders" method="POST">
+  <label>Title:</label>
+  <input type="text" name="brewName">
+  <label>Birth Day:</label>
+  <input type="text" name="bDate">
+  <label>Organic:</label>
+  <input type="checkbox" name="organic" checked>
+  <input type="submit" value="Add Cider">
+</form>
+
+<%- include('../partials/footer') %>

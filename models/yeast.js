@@ -9,8 +9,8 @@ const yeastSchema = new Schema({
     },
     source: String,
     price: Number,
-    bDay: Date,
-    xDay: Date,
+    bDate: Date,
+    xDate: Date,
     quantity: Number
 }, {
     timestamps: true

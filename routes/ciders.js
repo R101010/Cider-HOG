@@ -8,3 +8,4 @@ router.get('/:id', cidersCtrl.show);
 router.post('/', cidersCtrl.create);
 
 module.exports = router;
+

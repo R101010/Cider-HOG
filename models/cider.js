@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
+var Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
   content: String,
@@ -14,7 +13,7 @@ const reviewSchema = new Schema({
   timestamps: true
 });
 
-var ciderSchema = new mongoose.Schema({
+var ciderSchema = new Schema({
   brewName: {
     type: String,
     required: true
@@ -31,7 +30,7 @@ var ciderSchema = new mongoose.Schema({
   size: Number,
   organic: { type: Boolean, default: false },
   reviews: [reviewSchema],
-  yeast: [{
+  brew: [{
     type: Schema.Types.ObjectId,
     ref: 'Yeast'
   }]

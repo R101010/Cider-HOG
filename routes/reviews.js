@@ -3,6 +3,6 @@ var router = express.Router();
 var reviewsCtrl = require('../controllers/reviews');
 
 
-router.post('/movies/:id/reviews', reviewsCtrl.create);
+router.post('/ciders/:id/reviews', reviewsCtrl.create);
 
 module.exports = router;
