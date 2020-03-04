@@ -14,17 +14,18 @@ function index(req, res) {
   });
 }
 
+
 function show(req, res) {
   Cider.findById(req.params.id)
   .populate('yeast').exec(function(err, cider) {
-    Yeast.find({_id: {$nin: cider.yeast}}, frunction(err, yeasts) {
+    Yeast.find({_id: {$nin: cider.yeast}}, function(err, yeasts) {
       res.render('ciders/show', {
         title: 'Hard Cider Detail',
         cider,
         yeasts
       });
     });
-  };
+  });
 }
 
 function newCider(req, res) {
