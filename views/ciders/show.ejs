@@ -10,18 +10,19 @@
   <div>Organic: </div>
   <div><%= cider.organic ? 'Yes' : 'No' %></div>
 
-  <div>Brew:</div>
-  <ul>
-    <%- cider.brew.map(p => 
-      `<li>${p.name} <small>${p.bDate.toLocaleDateString()}</small></li>`
-    ).join('') %>
-  </ul>
+
+<div>Brew:</div>
+<ul>
+  <%- cider.brew.map(p => 
+    `<li>${p.name} <small>${p.bDate.toLocaleDateString()}</small></li>`
+  ).join('') %>
+</ul>
 </section>
 
-<form id="add-per-to-brew" action="/ciders/<%= cider._id%>/yeasts" method="POST">
+<form action="/ciders/<%= cider._id%>/yeasts" method="POST">
   <select name="yeastId">
     <%- yeasts.map(p => 
-      `<option value="${p._id}">${p.name}</option>`
+      `<option value="${p._id}">${p.brewName}</option>`
     ).join('') %>
   </select>
   <button type="submit">Add to Brew</button>

@@ -18,17 +18,16 @@ var ciderSchema = new Schema({
     type: String,
     required: true
   },
-  name: {
-    type: String,
-    required: true
-  },
+  // name: {
+  //   type: String,
+  //   required: true
+  // },
   source: String,
   price: Number,
   dueDate: Date,
   bDate: Date,
   xDate: Date,
   size: Number,
-  googleId: String,
   organic: { type: Boolean, default: false },
   reviews: [reviewSchema],
   brew: [{

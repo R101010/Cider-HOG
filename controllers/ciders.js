@@ -13,7 +13,7 @@ function index(req, res) {
     res.render('ciders/index', {
       ciders,
       user: req.user,
-      title: 'Cider house rules'
+      title: 'Cider House Rules'
     });
   });
 }
@@ -24,13 +24,14 @@ function show(req, res) {
   .populate('brew').exec(function(err, cider) {
     Yeast.find({_id: {$nin: cider.brew}}, function(err, yeasts) {
       res.render('ciders/show', {
-        title: 'Hard Cider Detail',
+        title: 'Hard Cider Details',
         cider,
         yeasts
       });
     });
   });
 }
+
 
 function newCider(req, res) {
   res.render('ciders/new', { title: 'Add Cider' });
