@@ -26,7 +26,8 @@ function show(req, res) {
       res.render('ciders/show', {
         title: 'Hard Cider Details',
         cider,
-        yeasts
+        yeasts,
+        user: req.user
       });
     });
   });
