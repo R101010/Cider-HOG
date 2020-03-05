@@ -5,7 +5,8 @@ module.exports = {
   index,
   show,
   new: newCider,
-  create
+  create,
+  delete: delFact
 };
 
 function index(req, res) {
@@ -49,7 +50,19 @@ function create(req, res) {
   });
 }
 
-
+function delFact(req, res, next) {
+  Cider.findByIdAndDelete(req.params.id, function(err, delFact) {
+    console.log("Delete Cider", delFact)
+    res.redirect('/ciders')
+  })
+};
+//   // Cider.findOne({'facts._id': req.params.id}, function(err, cider) {
+//   //   cider.facts.id(req.params.id).remove();
+//   //   cider.save(function(err) {
+//   //     res.redirect('/ciders');
+//     });
+//   });
+// }
 
 
 // function index(req, res, next) {

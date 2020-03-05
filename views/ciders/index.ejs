@@ -46,7 +46,9 @@
         <td><%= m.brewName %></td>
         <td><%= m.bDate %></td>
         <td><a href="/ciders/<%= m._id %>">DETAILS</a>
-          <button type="submit">X</button>
+          <form action="/ciders/<%= m._id %>?_method=DELETE" class="delete-form" method="POST">
+          <button id="delete" type="submit">Delete</button>
+        </form>
         </td>
       </tr>
       <% }); %>
