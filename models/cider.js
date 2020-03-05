@@ -28,6 +28,7 @@ var ciderSchema = new Schema({
   bDate: Date,
   xDate: Date,
   size: Number,
+  googleId: String,
   organic: { type: Boolean, default: false },
   reviews: [reviewSchema],
   brew: [{

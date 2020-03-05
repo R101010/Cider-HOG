@@ -10,7 +10,11 @@ module.exports = {
 
 function index(req, res) {
   Cider.find({}, function(err, ciders) {
-    res.render('ciders/index', {title: 'All Ciders', ciders });
+    res.render('ciders/index', {
+      ciders,
+      user: req.user,
+      title: 'Cider house rules'
+    });
   });
 }
 
