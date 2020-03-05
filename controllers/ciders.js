@@ -18,7 +18,6 @@ function index(req, res) {
   });
 }
 
-
 function show(req, res) {
   Cider.findById(req.params.id)
   .populate('brew').exec(function(err, cider) {

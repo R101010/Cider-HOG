@@ -9,8 +9,10 @@
 </head>
 <body>
   <nav>
-    <a href="/yeasts/new" <%- title === 'Add Yeast' ? 'class="active"' : '' %>>ADD Yeast</a>
-    <a href="/ciders/new" <%- title === 'Add Cider' ? 'class="active"' : '' %>>ADD Cider</a>
+    <% if (user) { %> 
+      <a href="/yeasts/new" <%- title === 'Add Yeast' ? 'class="active"' : '' %>>ADD Yeast</a>
+      <a href="/ciders/new" <%- title === 'Add Cider' ? 'class="active"' : '' %>>ADD Cider</a>
+    <% } %>
     <a href="/ciders" <%- title === 'All Ciders' ? 'class="active"' : '' %>>ALL CIDERS</a>
     <ul class="right">
       <li>
