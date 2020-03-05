@@ -1,13 +1,37 @@
-<%- include('../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/stylesheets/style.css" >
+  <title><%= title %></title>
+</head>
+<body>
+  <nav>
+    <a href="/yeasts/new" <%- title === 'Add Yeast' ? 'class="active"' : '' %>>ADD Yeast</a>
+    <a href="/ciders/new" <%- title === 'Add Cider' ? 'class="active"' : '' %>>ADD Cider</a>
+    <a href="/ciders" <%- title === 'All Ciders' ? 'class="active"' : '' %>>ALL CIDERS</a>
+    <ul class="right">
+  </nav>
+  <main>
+    <h1><%= title %></h1>
+
 
 <form id="new-form" action="/ciders" method="POST">
-  <label>Title:</label>
+  <label>Brew Name:</label>
+  <input type="text" name="name">
+  <label>Juice/Cider Brand:</label>
   <input type="text" name="brewName">
-  <label>Birth Day:</label>
-  <input type="text" name="bDate">
+  <label>Cost:</label>
+  <input type="text" name="price">
+  <label>Inception Date:</label>
+  <input type="date" name="bDate">
+  <label>Due Date:</label>
+  <input type="date" name="xDate">
   <label>Organic:</label>
-  <input type="checkbox" name="organic" checked>
-  <input type="submit" value="Add Cider">
+  <input id="checkBox" type="checkbox" name="organic" checked>
+  <input type="submit" value="ADD CIDER">
 </form>
 
 <%- include('../partials/footer') %>

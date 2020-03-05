@@ -1,10 +1,12 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Title: </div>
-  <div><%= cider.brewName %></div>
-  <div>Birth Day: </div>
+  <div>Brew Name: </div>
+  <div><%= cider.name %></div>
+  <div>Inception Date:</div>
   <div><%= cider.bDate %></div>
+  <div>Due Date:</div>
+  <div><%= cider.xDate %></div>
   <div>Organic: </div>
   <div><%= cider.organic ? 'Yes' : 'No' %></div>
 
@@ -71,4 +73,6 @@
 <% } %>
 
 
-<%- include('../partials/footer') %>
+</main>
+</body>
+</html>

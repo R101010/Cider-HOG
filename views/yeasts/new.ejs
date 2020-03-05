@@ -1,5 +1,21 @@
-<%- include('../partials/header') %>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/stylesheets/style.css" >
+  <title><%= title %></title>
+</head>
+<body>
+  <nav>
+    <a href="/ciders/new" <%- title === 'Add Cider' ? 'class="active"' : '' %>>ADD Cider</a>
+    <a href="/ciders" <%- title === 'All Ciders' ? 'class="active"' : '' %>>ALL Cider</a>
+    <ul class="right">
+  </nav>
+  <main>
+    <h1><%= title %></h1>
+    
 <p>Make sure you haven't already added the yeast strain
   <select>
     <% yeasts.forEach(function(p) { %>
@@ -12,6 +28,8 @@
   <input type="text" name="name">
   <label>Born:</label>
   <input type="bDate" name="born">
-  <input type="submit" value="Add Yeast">
+  <input type="submit" value="Add Yeast" id="y-button">
 </form>
-<%- include('../partials/footer') %>
+</main>
+</body>
+</html>
