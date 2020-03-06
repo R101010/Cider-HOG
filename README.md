@@ -9,11 +9,11 @@ Or go wild and make a nice batch of shine, but I am not covering distilling in t
 ## Screenshots
 
 ![Landing Page](https://i.imgur.com/rEnOUQk.jpg)
-[Logged in](https://i.imgur.com/kp4uhaP.jpg)
-[Add Cider](https://i.imgur.com/ik3Fa2M.jpg)
-[Add Yeast](https://i.imgur.com/J8ej7jH.jpg)
-[Detailed cider view](https://i.imgur.com/13ElpTC.jpg)
-[Reviews](https://i.imgur.com/8kjJr5P.jpg)
+![Logged in](https://i.imgur.com/kp4uhaP.jpg)
+![Add Cider](https://i.imgur.com/ik3Fa2M.jpg)
+![Add Yeast](https://i.imgur.com/J8ej7jH.jpg)
+![Detailed cider view](https://i.imgur.com/13ElpTC.jpg)
+![Reviews](https://i.imgur.com/8kjJr5P.jpg)
 
 ## Technologies Used:
 Javascript, HTML5, CSS, Node.js, MongoDB, Atlas database, Google loggin with OAuth 2.0.
