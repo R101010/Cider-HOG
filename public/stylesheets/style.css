@@ -20,14 +20,10 @@ body > nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 20px 0 30px;
+  padding: 0 20px;
 }
 
-nav > img {
-  width: 34px;
-  object-fit: contain;
-  margin-right: auto;
-}
+
 
 body > main {
   grid-area: main;
@@ -36,12 +32,8 @@ body > main {
   align-items: center;
   background-color: #FCECC9;
   padding: 20px;
-  overflow-y: scroll;
 }
 
-body > main h1:first-child {
-  margin-bottom: 50px;
-}
 
 nav > a {
   margin: 20px;
@@ -52,7 +44,7 @@ nav > a {
 
 nav > a:hover {
   color: white;
-  background-color: #424748;
+  background-color: #0ADB29;
 }
 
 nav > a.active {

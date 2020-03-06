@@ -18,8 +18,6 @@ function addToBrew(req, res) {
 
 function create(req, res) {
     const s = req.body.bDate;
-    // req.body.bDate =
-    //  `${s.substr(5,2)}-${s.substr(8,2)}-${s.substr(0,4)}`;
   Yeast.create(req.body, function(err, yeast) {
     res.redirect('/yeasts/new');
 });

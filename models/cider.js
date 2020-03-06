@@ -18,10 +18,10 @@ var ciderSchema = new Schema({
     type: String,
     required: true
   },
-  // name: {
-  //   type: String,
-  //   required: true
-  // },
+  name: {
+    type: String,
+    required: true
+  },
   source: String,
   price: Number,
   dueDate: Date,
