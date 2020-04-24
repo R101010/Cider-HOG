@@ -16,7 +16,7 @@ Or go wild and make a nice batch of shine, but I am not covering distilling in t
 ![Reviews](https://i.imgur.com/8kjJr5P.jpg)
 
 ## Technologies Used:
-Javascript, HTML5, CSS, Node.js, MongoDB, Atlas database, Google loggin with OAuth 2.0.
+Javascript, HTML5, CSS, Node.js, MongoDB, Atlas database, Google login  with OAuth 2.0.
 
 ## Getting Started
 [Cider HOG](https://cider-hog.herokuapp.com/ciders)
